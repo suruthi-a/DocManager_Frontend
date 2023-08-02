@@ -1,0 +1,42 @@
+<form (ngSubmit)="onSubmit()">
+  <div class=" form-group row justify-content-center mt-3">
+    <div class="col-4">
+      <div class="card">
+        <div class="card-body" *ngIf="!isConfirm">
+          <div class="row mb-2">
+
+            <mat-form-field appearance="outline">
+              <mat-label>Name</mat-label>
+              <input matInput type="name" [(ngModel)]="name" name="name" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput type="email" [(ngModel)]="email" name="email" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput type="password" [(ngModel)]="password" name="password" required>
+            </mat-form-field>
+
+            <button class="btn btn-primary" type="submit">Signup</button>
+          </div>
+        </div>
+ 
+      <div class="card-body" *ngIf="isConfirm">
+        <div class="row mb-2">
+        <mat-form-field appearance="outline">
+          <mat-label>Verification Code</mat-label>
+          <input matInput type="code" [(ngModel)]="verifycode" name="code" required>
+        </mat-form-field>
+        <button type="button" (click)="confirmSignUp()" class="btn btn-sm btn-success">Confirm</button>
+      </div>
+      <div>
+
+      </div>
+     </div>
+    </div>
+    </div>
+  </div>
+</form>
